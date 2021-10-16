@@ -1,0 +1,20 @@
+from os.path import join
+from jinja2 import Template
+
+
+def render(filename, home='templates', **kwargs):
+    '''
+    Рендеринг шаблона по адресу home+filename
+    :param filename: имя шаблона
+    :param home: папка, где ищем шаблон
+    :param kwargs: параметры передаваемые в метод Template.render
+    :return: результат который должны передать на сервер
+    '''
+    fullpath = join(home, filename)
+    with open(fullpath, encoding='utf-8') as f:
+        template = Template(f.read())
+    print(kwargs)
+    return template.render(**kwargs)
+
+if __name__ == '__main__':
+    exit(0)
