@@ -13,8 +13,9 @@ def render(filename, home='templates', **kwargs):
     fullpath = join(home, filename)
     with open(fullpath, encoding='utf-8') as f:
         template = Template(f.read())
-    print(kwargs)
     return template.render(**kwargs)
 
 if __name__ == '__main__':
+    print('Приложение запускается на базе wsgiref.simple_server')
+    print('Для начала работы запустите "run.py"')
     exit(0)
