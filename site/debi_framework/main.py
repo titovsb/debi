@@ -1,7 +1,7 @@
 import quopri
 
 from debi_framework.templator import render
-from framework_requests import GetRequests, PostRequests
+from debi_framework.framework_requests import GetRequests, PostRequests
 
 ANSWER404 = '404 Not Found'
 
@@ -35,7 +35,7 @@ class Framework:
         if method == 'GET':
             request_params = GetRequests().get_request_params(environment)
             request['request_params'] = request_params
-            print(f'Поступил GET запрос {request_params}')
+            print(f'Поступил GET запрос {Framework.decode_value(request_params)}')
 
         # Находим нужный контроллер
         if sitepath in self.sitemap:
@@ -52,7 +52,7 @@ class Framework:
     def decode_value(data: dict):
         new_dict = dict()
         for k, v in data.items():
-            val = bytes(v.replace('&', '=').replace('+', ' '), 'UTF-8')
+            val = bytes(v.replace('%', '=').replace('+', ' '), 'UTF-8')
             val_decode_str = quopri.decodestring(val).decode('UTF-8')
             new_dict[k] = val_decode_str
         return new_dict

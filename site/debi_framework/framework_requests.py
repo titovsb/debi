@@ -1,3 +1,5 @@
+from pprint import pprint
+
 class GetRequests:
     @staticmethod
     def parse_input_data(data: str):
@@ -14,7 +16,7 @@ class GetRequests:
     @staticmethod
     def get_request_params(env_dict):
         # Получаем параметры запроса
-        query_string = env_dict['QUERY STRING']
+        query_string = env_dict['QUERY_STRING']
         # переводим полученные параметры в словарь
         request_params = GetRequests.parse_input_data(query_string)
         return request_params
@@ -32,9 +34,6 @@ class PostRequests:
                 k, v = item.split('=')
                 result[k] = v
         return result
-
-    def parse_input_data(self):
-        pass
 
     @staticmethod
     def get_wsgi_input_data(env_dict)->bytes:
@@ -55,13 +54,10 @@ class PostRequests:
             result = self.parse_input_data(data_str)
         return result
 
+    # @staticmethod
     def get_request_params(self, env_dict):
         # получаем данные
         data = self.get_wsgi_input_data(env_dict)
         # превращаем байтовые данные в словарь
         data = self.parse_wsgi_input_data(data)
         return data
-
-    @staticmethod
-    def get_request_params(env_dict):
-        pass
