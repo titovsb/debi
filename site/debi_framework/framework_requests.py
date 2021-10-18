@@ -38,7 +38,7 @@ class PostRequests:
     @staticmethod
     def get_wsgi_input_data(env_dict)->bytes:
         # Длина тела данных
-        content_length_str = env_dict['CONTENT_LENGTH']
+        content_length_str = env_dict.get('CONTENT_LENGTH')
         # переводим в целое int
         content_length = int(content_length_str) if content_length_str else 0
         # считываем данные если они имеются

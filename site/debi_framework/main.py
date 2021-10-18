@@ -7,7 +7,7 @@ ANSWER404 = '404 Not Found'
 
 
 class Page404:
-    def __call__(self):
+    def __call__(self, request):
         return ANSWER404, render('404.html')
 
 
