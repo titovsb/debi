@@ -1,28 +1,29 @@
 {% extends "tmpl_base.html" %}
 
 {% block title %}
-    Заголовок страницы INDEX
+Заголовок страницы INDEX
 {% endblock title %}
 
 {% block style %}
-    {% include "style.css" %}
+{% include "style.css" %}
 {% endblock style%}
 
 {% block header%}
-    Шапка
-    <!-- {% include "header.html" %} -->
+Шапка
+{% include "header.html" %}
 {% endblock header %}
 
 {% block menu %}
-    Меню
-    <!-- {% include "menu.html" %} -->
+Меню
+{% include "menu.html" %}
 {% endblock menu %}
 
 {% block body %}
-    Тело
-    <!-- {% include "body.html" %} -->
+Тело
+{% include "body.html" %}
 {% endblock body %}
 
-    <!-- {% block footer %}
- {% include "footer.html" %}
-{% endblock footer %} -->
+{% block footer %}
+Подвал
+{% include "footer.html" %}
+{% endblock footer %}
