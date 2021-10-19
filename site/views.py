@@ -4,7 +4,7 @@ ANSWER200 = '200 OK'
 
 class Index:
     def __call__(self,request):
-        return ANSWER200, render('tmpl_base.html', request)
+        return ANSWER200, render('index.html')
 
 class About:
     def __call__(self, request):

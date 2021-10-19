@@ -17,7 +17,8 @@ def render(filename, home='templates', **kwargs):
     #     template = Template(f.read())
 
     # подключаем наследование шаблонов из папки
-    env = Environment
+    env = Environment()
+    print(f'HOME={home}')
     env.loader = FileSystemLoader(home)
     template = env.get_template(filename)
     return template.render(**kwargs)
