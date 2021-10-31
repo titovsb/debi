@@ -1,4 +1,5 @@
 import quopri
+import wsgiref.util
 
 from debi_framework.templator import render
 from debi_framework.framework_requests import GetRequests, PostRequests
@@ -18,6 +19,8 @@ class Framework:
     def __call__(self, environment, response):
         # Получаем адрес, по которому пользователь выполнил переход
         sitepath = environment['PATH_INFO']
+
+        print(wsgiref.util.guess_scheme(environment))
 
         # Добавляем закрывающий слеш если надо
         if not sitepath.endswith('/'):

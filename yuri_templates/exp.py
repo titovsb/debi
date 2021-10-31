@@ -126,7 +126,7 @@ window.title("Добро пожаловать в приложение искbit"
 window.geometry('700x350')
 
 
-dokkod = PhotoImage(file='C:\\Users\\Валентина\\Desktop\\проект\\icon.png')
+dokkod = PhotoImage(file='')
 panel = Label(window, image=dokkod)
 panel.grid(column=0, row=0)
 label = Label(window, text="Загрузите файл", font=("Arial Bold", 12))

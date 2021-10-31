@@ -12,16 +12,17 @@ elements = [
 
 #here we instantiate the template and define the HEADER
 f = Template(format="A4", elements=elements,
-             title="Sample Invoice")
+             title="Demo")
 f.add_page()
-
+f.pdf.add_font('arial', '', 'Arial.ttf', uni=True)
+f.pdf.set_font('arial', size=14)
 #we FILL some of the fields of the template with the information we want
 #note we access the elements treating the template instance as a "dict"
-f["company_name"] = "Sample Company"
-f["company_logo"] = "logo.png"
+f["company_name"] = "Компания"
+f["company_logo"] = "debipng.png"
 
 #and now we render the page
-f.render("./template.pdf") # from fpdf import FPDF
+f.render("template.pdf") # from fpdf import FPDF
 
 #
 # fname = 'test.pdf'
