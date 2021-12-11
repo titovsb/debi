@@ -13,7 +13,7 @@ txt2 = f'Надо пройти сначала длинную большую ул
        f'падающего огромными хлопьями снега. Я повернула направо, потом налево, потом опять направо, ' \
        f'исполняя все с точностью, как говорила мне Нюрочка, - и все шла, шла, шла без конца.'
 
-fname = 'test.pdf'
+fname = 'test.fonts'
 
 ELEM_TYPES = ('Header', 'Text', 'Image', 'Box', 'Line', 'Barcode')
 
@@ -42,12 +42,12 @@ def make_pdf(filename=fname, elements=dict, margins={10, 20, 50}):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_margins(*margins)
-    # pdf.add_font('arial', 'Regular', 'Arial.ttf', uni=True)
+    # fonts.add_font('arial', 'Regular', 'Arial.ttf', uni=True)
     pdf.add_font('times_regular', '', 'Times New Roman Cyr Regular.ttf', uni=True)
     pdf.set_font('times_regular', size=14)
     t = 'Привет участникам соревнований. Привет участникам соревнований. Привет участникам соревнований. Привет участникам соревнований. Привет участникам соревнований. Привет участникам соревнований. Привет участникам соревнований. Привет участникам соревнований.'
     pdf.multi_cell(190, 7, txt=t, align='J')
-    # pdf.cell(190,6, txt=t, align='J')
+    # fonts.cell(190,6, txt=t, align='J')
     pdf.add_font('times_italic', '', 'Times New Roman Cyr Italic.ttf', uni=True)
     pdf.set_font('times_italic', size=14)
     pdf.multi_cell(190, 7, txt=t, align='J')

@@ -22,36 +22,36 @@ f["company_name"] = "Компания"
 f["company_logo"] = "debipng.png"
 
 #and now we render the page
-f.render("template.pdf") # from fpdf import FPDF
+f.render("template.fonts") # from fpdf import FPDF
 
 #
-# fname = 'test.pdf'
+# fname = 'test.fonts'
 #
-# pdf = FPDF()
-# pdf.add_page()
-# pdf.add_font('arial', '', 'Arial.ttf', uni=True)
-# pdf.set_font('arial', size=14)
-# pdf.cell(200,10, txt='Привет участникам соревнований', ln=1, align='J')
-# pdf.output(fname)
+# fonts = FPDF()
+# fonts.add_page()
+# fonts.add_font('arial', '', 'Arial.ttf', uni=True)
+# fonts.set_font('arial', size=14)
+# fonts.cell(200,10, txt='Привет участникам соревнований', ln=1, align='J')
+# fonts.output(fname)
 
 # change_fonts.py
 
 # from fpdf import FPDF
 #
 # def change_fonts():
-#     pdf = FPDF()
-#     pdf.add_page()
+#     fonts = FPDF()
+#     fonts.add_page()
 #     font_size = 8
-#     for font in pdf.core_fonts:
+#     for font in fonts.core_fonts:
 #         if any([letter for letter in font if letter.isupper()]):
 #             # пропускаем данный шрифт.
 #             continue
-#         pdf.set_font(font, size=font_size)
+#         fonts.set_font(font, size=font_size)
 #         txt = "Font name: {} - {} pts".format(font, font_size)
-#         pdf.cell(0, 10, txt=txt, ln=1, align="C")
+#         fonts.cell(0, 10, txt=txt, ln=1, align="C")
 #         font_size += 2
 #
-#     pdf.output("change_fonts.pdf")
+#     fonts.output("change_fonts.fonts")
 #
 # if __name__ == '__main__':
 #     change_fonts()
